@@ -1,0 +1,24 @@
+# version of docker-compose tool
+version: '3.7'
+# services to deploy (containers within image)
+services:
+  # name of container; name used to other containers to find
+  narneso_mongodb_container:
+    # specifies docker image, official docker image from docker-hub
+    image: mongo:latest
+    # variables docker container will use to start up
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    # port for mongodb inside container, and the port accessible from container host
+    ports:
+      - 27017:27017
+    # specifies what file locations our container is allowed to interact with
+    volumes:
+      # volume name inside container: volume name outside of container
+      - narneso-data:/data/db
+
+# volumes section
+volumes:
+  # declaration of 'narenesso-data' var for volumes
+  narneso-data:
