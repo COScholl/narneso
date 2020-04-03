@@ -1,0 +1,2 @@
+# narneso
+dockerized mongoDB server
