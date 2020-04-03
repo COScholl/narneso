@@ -14,3 +14,4 @@ https://dev.to/sonyarianto/how-to-spin-mongodb-server-with-docker-and-docker-com
 - `docker system prune` Removed stopped containers
 - `docker system prune --volumes` Remove stopped volumes
 - `docker rmi -f $(docker images -qa)` Force remove images by listed ids
+- `mongo admin -u root -p rootpassword` Connect to mongodb shell 

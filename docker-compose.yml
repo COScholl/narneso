@@ -10,7 +10,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpassword
-    # port for mongodb inside container, and the port accessible from container host
+    # port for mongodb for host: port for the container
     ports:
       - 27017:27017
     # specifies what file locations our container is allowed to interact with
