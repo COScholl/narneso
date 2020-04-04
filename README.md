@@ -1,6 +1,7 @@
 # narneso
-dockerized mongoDB server based on tutorial here:
+Dockerized mongoDB server based on tutorial here:
 https://dev.to/sonyarianto/how-to-spin-mongodb-server-with-docker-and-docker-compose-2lef
+With additional configuration to load seed data on `docker-compose up`
 
 ## Understanding Docker
 
@@ -86,6 +87,7 @@ The `volumes` property at the same indent as the named services would get all na
 - `docker images` List docker images
 - `docker stop $(docker ps -qa)` Stop images by listed ids
 - `docker system prune` Removed stopped containers
-- `docker system prune --volumes` Remove stopped volumes
+- `docker system prune --volumes` prune volumes
+- `docker system prune -a` Remove all unused images
 - `docker rmi -f $(docker images -qa)` Force remove images by listed ids
 - `mongo 127.0.0.1:20000/admin  -u root -p rootpassword` Connect to mongodb shell
