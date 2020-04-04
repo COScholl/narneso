@@ -20,8 +20,25 @@ services:
     volumes:
       # volume name inside container: volume name outside of container
       - narneso-data:/data/db
+    # connect this container explicitly to the network created to manage containers
+    networks:
+      - dev
 
-# volumes section
+  narnesso_seed_data:
+    # build and run commands with dockerfile in directory
+    build: ./narnesso_seed_data
+    # connect this container explicitly to the network created to manage containers
+    networks:
+      - dev
+    # depends_on:
+    #   - narneso_mongodb_container
+
+# declare volume names
 volumes:
-  # declaration of 'narenesso-data' var for volumes
+  # declaration of 'narenesso-data' var name for volumes
   narneso-data:
+
+# define networks
+networks:
+  dev:
+    driver: bridge
