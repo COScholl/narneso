@@ -1,7 +1,8 @@
 # narneso
 Dockerized mongoDB server based on tutorial here:
 https://dev.to/sonyarianto/how-to-spin-mongodb-server-with-docker-and-docker-compose-2lef
-With additional configuration to load seed data on `docker-compose up`
+
+Additional configuration to load seed data on `docker-compose up`
 
 ## Understanding Docker
 
