@@ -30,8 +30,8 @@ services:
     # connect this container explicitly to the network created to manage containers
     networks:
       - dev
-    # depends_on:
-    #   - narneso_mongodb_container
+    depends_on:
+      - narneso_mongodb_container
 
 # declare volume names
 volumes:
