@@ -28,7 +28,7 @@ A Docker volume is a path from the host file system into the Docker container.
       - `docker volume create <volume name>`
       - `docker run -v name:<container file path>`
 ### Docker Containers
-A Docker container is an instance of the Docker image that can be run. The Docker images the Docker container. Within the container, changes can be made to applications, services, environment, etc., but they will not persist if the container is deleted, or restarted using the Docker image's definition.
+A Docker container is an instance of the Docker image that can be run. The Docker image defines the Docker container. Within the container, changes can be made to applications, services, environment, etc., but they will not persist if the container is deleted, or restarted using the Docker image's definition.
 ### Docker Images
 A Docker image is an immutable template with instructions for creating a Docker container.
 ### Dockerfiles
