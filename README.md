@@ -15,7 +15,7 @@ Docker compose creates a single network for an application by default. This allo
 - To attach a running container to a network:
 
 ```bash
-docker network connect <network name> <container name>
+$ docker network connect <network name> <container name>
 ```
 
 ### Docker Volumes
@@ -24,7 +24,9 @@ A Docker volume is a path from the host file system into the Docker container.
 
   - Host Volume defined:
 
-    - `docker run -v <host file path>:<container file path>`
+    - ```bash
+    $ docker run -v <host file path>:<container file path>
+    ```
 
   - By defining only the container file path to persist data from:
 
