@@ -3,7 +3,7 @@ version: '3.7'
 # services to deploy (containers within image)
 services:
   # name of container; name used to other containers to find
-  narneso_mongodb_container:
+  narneso_mongo:
     # specifies docker image, official docker image from docker-hub
     image: mongo:latest
     # variables docker container will use to start up
@@ -15,7 +15,10 @@ services:
     # by default 27107:27107 host is mongodb://127.0.0.1:27107/admin
     # port mapping of '20000:27107' would be incomplete host port
     ports:
-      - 27017:27017
+      - 127.0.0.1:20000:27017
+    container_name: narneso_mongo
+    entrypoint:
+      - mongod
     # attempt to allow access to port 20000 with ----bind_ip_all
     #command: --bind_ip_all
     expose:
@@ -26,23 +29,25 @@ services:
       - narneso-data:/data/db
     # connect this container explicitly to the network created to manage containers
     networks:
-      - dev
+      - narneso_net
 
-  narnesso_seed_data:
+  narneso_seed_data:
     # build and run commands with dockerfile in directory
-    build: ./narnesso_seed_data
+    build: ./narneso_seed_data
     # connect this container explicitly to the network created to manage containers
     networks:
-      - dev
+      - narneso_net
     depends_on:
-      - narneso_mongodb_container
+      - narneso_mongo
 
 # declare volume names
 volumes:
-  # declaration of 'narenesso-data' var name for volumes
+  # declaration of 'narneso-data' var name for volumes
   narneso-data:
 
 # define networks
+# name property sets a custom name for the top level network "external: name" deprecated
+# https://docs.docker.com/compose/compose-file/compose-file-v2/#networks
 networks:
-  dev:
-    driver: bridge
+  narneso_net:
+    name: xygag

@@ -19,6 +19,10 @@ Docker compose creates a single network for an application by default. This allo
   ```bash
   $ docker network connect <network name> <container name>
   ```
+- To define a network in the docker-compose.yml, add a top-level property called `networks`. For each service-level network, a top-level network can be specified to connect with.
+
+  - Top-level network by key: `https://docs.docker.com/compose/compose-file/compose-file-v2/#network-configuration-reference`
+  - Service-level network by key: `https://docs.docker.com/compose/compose-file/compose-file-v2/#networks`
 
 ### Docker Volumes
 A Docker volume is a path from the host file system into the Docker container.
