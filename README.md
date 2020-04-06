@@ -4,7 +4,19 @@ https://dev.to/sonyarianto/how-to-spin-mongodb-server-with-docker-and-docker-com
 
 Additional configuration to load seed data on `docker-compose up`
 
+## TODO
+- consider testing mongodb: https://github.com/shelfio/jest-mongodb
+
 ## Understanding Docker
+
+### Docker networks
+Docker compose creates a single network for an application by default. This allows all containers in that network to be reachable by other containers in the network. These containers are also discoverable by other containers at the hostname of the container. If containers are running on different networks, and those networks are not connected, then one container will not be able to talk to another container.
+
+- To attach a running container to a network:
+
+```bash
+docker network connect <network name> <container name>
+```
 
 ### Docker Volumes
 A Docker volume is a path from the host file system into the Docker container.
