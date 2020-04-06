@@ -24,7 +24,7 @@ A Docker volume is a path from the host file system into the Docker container.
 
   - Host Volume defined:
 
-    - ```bash
+    ```bash
     $ docker run -v <host file path>:<container file path>
     ```
 
@@ -33,14 +33,23 @@ A Docker volume is a path from the host file system into the Docker container.
     - Anonymous Volume:
 
       - automatically created (`/var/lib/docker/volumes/<random-hash>/_data`)
-      - `docker run -v `<container file path>`
+
+      ```bash
+      $ docker run -v <container file path>
+      ```
 
   - By naming the volume:
 
     - Named Volume:
 
-      - `docker volume create <volume name>`
-      - `docker run -v name:<container file path>`
+      ```bash
+      $ docker volume create <volume name>
+      ```
+
+      ```bash
+      $ docker run -v name:<container file path>
+      ```
+
 ### Docker Containers
 A Docker container is an instance of the Docker image that can be run. The Docker image defines the Docker container. Within the container, changes can be made to applications, services, environment, etc., but they will not persist if the container is deleted, or restarted using the Docker image's definition.
 ### Docker Images
