@@ -41,11 +41,9 @@ A Docker volume is a path from the host file system into the Docker container.
   - By naming the volume:
 
     - Named Volume:
-
       ```bash
       $ docker volume create <volume name>
       ```
-
       ```bash
       $ docker run -v name:<container file path>
       ```
