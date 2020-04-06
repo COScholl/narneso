@@ -117,3 +117,4 @@ The `volumes` property at the same indent as the named services would get all na
 - `docker system prune -a` Remove all unused images
 - `docker rmi -f $(docker images -qa)` Force remove images by listed ids
 - `mongo 127.0.0.1:20000/admin  -u root -p rootpassword` Connect to mongodb shell
+- `docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' narneso_mongo` Get IP address for service on the external network (or bridge network)
