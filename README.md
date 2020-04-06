@@ -16,7 +16,6 @@ $ docker-compose up
 Docker compose creates a single network for an application by default. This allows all containers in that network to be reachable by other containers in the network. These containers are also discoverable by other containers at the hostname of the container. If containers are running on different networks, and those networks are not connected, then one container will not be able to talk to another container.
 
 - To attach a running container to a network:
-
 ```bash
 $ docker network connect <network name> <container name>
 ```
@@ -26,7 +25,6 @@ A Docker volume is a path from the host file system into the Docker container.
 - By mapping a connection from the host to the container, we can persist data:
 
   - Host Volume defined:
-
     ```bash
     $ docker run -v <host file path>:<container file path>
     ```
@@ -36,10 +34,9 @@ A Docker volume is a path from the host file system into the Docker container.
     - Anonymous Volume:
 
       - automatically created (`/var/lib/docker/volumes/<random-hash>/_data`)
-
-      ```bash
-      $ docker run -v <container file path>
-      ```
+        ```bash
+        $ docker run -v <container file path>
+        ```
 
   - By naming the volume:
 
