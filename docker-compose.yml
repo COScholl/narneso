@@ -11,16 +11,11 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpassword
     # port for mongodb for host: port for the container
-    # host port needs explicit declaration with localhost address
     # by default 27107:27107 host is mongodb://127.0.0.1:27107/admin
     # port mapping of '20000:27107' would be incomplete host port
     ports:
       - 127.0.0.1:20000:27017
     container_name: narneso_mongo
-    # entrypoint:
-    #   - mongod
-    # attempt to allow access to port 20000 with ----bind_ip_all
-    #command: --bind_ip_all
     expose:
       - 20000
     # specifies what file locations our container is allowed to interact with
@@ -46,8 +41,7 @@ volumes:
   narneso-data:
 
 # define networks
-# name property sets a custom name for the top level network "external: name" deprecated
-# https://docs.docker.com/compose/compose-file/compose-file-v2/#networks
+# name property sets a custom name for the top level network
 networks:
   narneso_net:
     name: xygag
